@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Page 3</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;   /* ✅ nasa TAAS */
+            align-items: center;           /* ✅ pahalang na gitna */
+            padding-top: 20px;
+            background: #ffffff;
+        }
+
+        a {
+            display: inline-block;
+            line-height: 0;
+            max-width: 100%;
+        }
+
+        a img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        #timer {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+            width: 100%;
+            padding: 0 16px;
+            word-wrap: break-word;
+        }
+
+        #button-container {
+            display: none;
+            text-align: center;
+            width: 100%;
+            padding: 0 16px;
+        }
+
+        #button-container.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="timer">Please wait: 20 seconds</div>
+
+    <div id="button-container">
+        <a href='https://uplcm.com/4/12210239' onclick="
+            window.open('https://telegram.me/z53899');
+            window.open('https://www.stackoverflow.com/');
+            window.location.href='https://uplcm.com/4/12210239';
+            return false;">
+            <img src="https://raw.githubusercontent.com/mobiflix/yts/80527866d20695e511d438209fbbdc7e453668e6/getlink2.jpg" alt="Button Image">
+        </a>
+    </div>
+
+    <script>
+        let seconds = 20;
+        const timerEl = document.getElementById('timer');
+        const buttonContainer = document.getElementById('button-container');
+
+        const countdown = setInterval(() => {
+            seconds--;
+            if (seconds > 0) {
+                timerEl.textContent = `Please wait: ${seconds} second${seconds !== 1 ? 's' : ''}`;
+            } else {
+                clearInterval(countdown);
+                timerEl.style.display = 'none';
+                buttonContainer.classList.add('show');
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
